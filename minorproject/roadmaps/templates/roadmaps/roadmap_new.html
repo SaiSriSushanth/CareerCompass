@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Career Compass
+{% endblock %}
+
+{% block header %}
+<h1>Make a Roadmap</h1>
+{% endblock %}
+{% block quote %}
+{% endblock %}
+{% block search %}
+{% endblock %}
+
+{% block content %}
+    
+    <form action="{% url 'roadmaps:new-roadmap' %}" method="post"
+     enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}

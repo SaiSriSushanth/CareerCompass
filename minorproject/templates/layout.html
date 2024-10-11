@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Career Compass
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    {% block bubbles %}
+    <div class="bubbles">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    {% endblock %}
+    
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{% url 'roadmaps:list' %}">Roadmaps</a></li>
+        <li><a href="{% url 'roadmaps:new-roadmap' %}">Make Roadmap</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/about">About</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a></li>
+        {% else %}
+            <li><a href="{% url 'users:register' %}">Register</a></li>
+            <li><a href="{% url 'users:login' %}">Log in</a></li>
+        {% endif %}
+    </ul> 
+
+    <form id="logout-form" action="{% url 'users:logout' %}" method="post">
+        {% csrf_token %}
+    </form>
+    
+    <div class="container">
+        <h1 class="gradient">
+            <span>
+                {% block header %}
+                    Career Compass
+                {% endblock %}
+            </span>
+        </h1>
+        {% block quote %}
+            <p>Navigate your passion, discover your path.
+                <br>Career compass is with you!!
+            </p>
+        {% endblock %}
+        {% block search %}
+            <div class="box">
+                <input type="text" placeholder="Search...">
+                <a href="#">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+        {% endblock %}
+    {% block content %}
+        <h2 style="text-align: center; margin-bottom: 20px;">Explore Roadmaps</h2>
+        <div class="roadmaps-section">
+            
+            <div class="roadmap-card">
+                
+                <h3 class="title">Frontend</h3>
+            </div>
+           
+            <div class="roadmap-card">
+                
+                <h3 class="title">Backend</h3>
+            </div>
+            <div class="roadmap-card">
+               
+                <h3 class="title">DevOps</h3>
+            </div>
+            <div class="roadmap-card">
+               
+                <h3 class="title">Full Stack</h3>
+            </div>
+            <div class="roadmap-card">
+                
+                <h3 class="title">Al and Data Scientist</h3>
+            </div>
+            <div class="roadmap-card">
+               
+                <h3 class="title">Data Analyst</h3>
+            </div>
+            <div class="roadmap-card">
+                
+                <h3 class="title">Android</h3>
+            </div>
+            <div class="roadmap-card">
+                
+                <h3 class="title">iOS</h3>
+            </div>
+            <div class="roadmap-card">
+               
+               
+                <h3 class="title">PostgreSQL</h3>
+            </div>
+            <div class="roadmap-card">
+              
+                <h3 class="title">Blockchain</h3>
+            </div>
+            <div class="roadmap-card">
+               
+                <h3 class="title">QA</h3>
+            </div>
+            <div class="roadmap-card">
+                
+                <h3 class="title">Software Architect</h3>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    {% block footer %}
+        <footer>
+            <div class="wrapper">
+            <small>&copy;2024 <strong>Career Compass</strong>, All Rights Reserved</small>
+            <nav class="footer-nav">
+                <a href="#">Back to Top</a>
+            </nav>
+            </div>
+        </footer>
+    {% endblock %}
+</body>
+</html>

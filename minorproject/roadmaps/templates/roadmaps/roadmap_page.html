@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+    {{ roadmap.title }}
+{% endblock %}
+
+{% block header %}
+    <h1 style="text-align: center; margin-bottom: 20px;">
+        {{ roadmap.title }}
+    </h1>
+{% endblock %}
+{% block bubbles %}
+{% endblock %}
+{% block quote %}
+{% endblock %}
+{% block search %}
+{% endblock %}
+
+{% block content %}
+    <img 
+    src="{{roadmap.banner.url}}" 
+    alt="{{post.title}}">
+    
+
+    <p>{{ roadmap.body|safe}}</p> 
+    
+  
+
+{% endblock %}

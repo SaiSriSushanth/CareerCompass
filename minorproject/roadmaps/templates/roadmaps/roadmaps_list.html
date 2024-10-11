@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Career Compass
+{% endblock %}
+
+{% block header %}
+ <h1>Roadmaps</h1>
+{% endblock %}
+
+{% block quote %}
+{% endblock %}
+
+{% block content %}
+<h2 style="text-align: center; margin-bottom: 20px;">Explore Roadmaps</h2>
+<div class="roadmaps-section">
+    {% for roadmap in roadmaps%}
+
+    <a style="text-decoration:none;color:#FFF;" 
+    href="{% url 'roadmaps:page' slug=roadmap.slug %}">
+        <div class="roadmap-card">
+            <h3 class="title">
+                {{ roadmap.title }}
+                <p style="font-size:10px;">{{roadmap.date}} by {{roadmap.author}}</p>
+            </h3>
+        </div>
+    </a>
+
+    {% endfor %}
+   
+</div>
+</div>
+{% endblock %}

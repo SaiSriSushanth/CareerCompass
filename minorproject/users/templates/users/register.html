@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% load static%}
+
+{% block title %}
+    Career Compass
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+{% block quote %}
+{% endblock %}
+{% block search %}
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper-form">
+        <form class="form-with-validation" 
+        action="{% url 'users:register' %}" method="post">
+            <h2>Register</h2>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div>
+                {{ form.username.label_tag }} {{ form.username }}
+            </div>
+            <div>
+                {{ form.password1.label_tag }} {{ form.password1 }}
+            </div>
+            <div>
+                {{ form.password2.label_tag }} {{ form.password2 }}
+            </div> 
+            <button type="submit">Register</button>
+        </form>
+    </div>
+{% endblock %}
+
+{%block footer%}
+{%endblock%}

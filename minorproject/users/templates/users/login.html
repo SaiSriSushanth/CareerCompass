@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% load static%}
+
+{% block title %}
+    Career Compass
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+{% block quote %}
+{% endblock %}
+{% block search %}
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper-form">
+        <form class="form-with-validation" 
+        action="{% url 'users:login' %}" method="post">
+            <h2>Login</h2>
+            {% csrf_token %}
+            {{ form }}
+            {% if request.GET.next %}
+                <input type="hidden" name="next"
+                 value="{{ request.GET.next }}"/>
+            {% endif %}
+            <button type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}
+
+{%block footer%}
+{%endblock%}

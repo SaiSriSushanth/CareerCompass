@@ -1,0 +1,473 @@
+body {
+  background-color: #181818;
+  
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.mermaid {
+  width: 100%;
+  height: auto;
+}
+/* Bubble animation */
+.bubbles {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bubbles div {
+  position: absolute;
+  bottom: -100px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8), 0 0 30px 10px rgba(255, 255, 255, 0.6);
+  animation: rise 10s infinite ease-in-out;
+  opacity: 0;
+}
+.bubbles div:nth-child(1) {
+  left: 10%;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 0, 255, 0.9);
+  box-shadow: 0 0 20px 10px rgba(255, 0, 255, 1);
+  animation-delay: 0s;
+}
+
+.bubbles div:nth-child(2) {
+  left: 20%;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 255, 255, 0.9);
+  box-shadow: 0 0 20px 10px rgba(0, 255, 255, 1);
+  animation-delay: 2s;
+}
+
+.bubbles div:nth-child(3) {
+  left: 30%;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 255, 0, 0.9);
+  box-shadow: 0 0 20px 10px rgba(0, 255, 0, 1);
+  animation-delay: 4s;
+}
+
+.bubbles div:nth-child(4) {
+  left: 40%;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 0, 0.9);
+  box-shadow: 0 0 20px 10px rgba(255, 255, 0, 1);
+  animation-delay: 6s;
+}
+
+.bubbles div:nth-child(5) {
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background: rgba(0, 0, 255, 0.9);
+  box-shadow: 0 0 20px 10px rgba(0, 0, 255, 1);
+  animation-delay: 8s;
+}
+
+.bubbles div:nth-child(6) {
+  left: 60%;
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 0, 0, 0.9);
+  box-shadow: 0 0 20px 10px rgba(255, 0, 0, 1);
+  animation-delay: 1s;
+}
+
+.bubbles div:nth-child(7) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 255, 255, 0.9);
+  box-shadow: 0 0 20px 10px rgba(0, 255, 255, 1);
+  animation-delay: 3s;
+}
+
+.bubbles div:nth-child(8) {
+  left: 80%;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 255, 0.9);
+  box-shadow: 0 0 20px 10px rgba(0, 0, 255, 1);
+  animation-delay: 5s;
+}
+
+.bubbles div:nth-child(9) {
+  left: 90%;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 0, 0.9);
+  box-shadow: 0 0 20px 10px rgba(255, 255, 0, 1);
+  animation-delay: 7s;
+}
+
+.bubbles div:nth-child(10) {
+  left: 95%;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 0, 255, 0.9);
+  box-shadow: 0 0 20px 10px rgba(255, 0, 255, 1);
+  animation-delay: 9s;
+}
+
+/* Defining the bubble rising animation */
+@keyframes rise {
+  0% {
+      transform: translateY(0);
+      opacity: 0.3;
+  }
+  50% {
+      opacity: 0.7;
+  }
+  100% {
+      transform: translateY(-800px);
+      opacity: 0;
+  }
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 960px;
+}
+.box{
+  height: 30px;
+  display: flex;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 30px;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0,0.3);
+}
+.box:hover input{
+  width: 200px
+}
+.box input{
+  width: 0;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  transition: 0.8s;
+  background: transparent;
+}
+.box a .fas{
+  
+  font-size: 20px;
+}
+.gradient {
+  font-size: 3rem;
+  background: linear-gradient(to right, #fc72ff, #8f68ff, #487bff, #8f68ff, #fc72ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+.input-container {
+	display: flex;
+}
+
+::placeholder {
+  color: #757575;
+  opacity: 1;
+}
+
+.search-input {
+  background: #EEEEEE;
+  color: #212121;
+	vertical-align: middle;
+  font-size: 16px;
+  line-height: 2;
+  padding: 10px 20px;
+  border: 0;
+  outline: none;
+}
+
+.search-submit {
+  background: #337ab7;
+  color: #FFFFFF;
+	vertical-align: middle;
+  padding: 0 20px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-submit i {
+  font-size: 24px;
+}
+/* navigation------------------------------------------------------------- */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 1000;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background: linear-gradient(to right,#487bff,#8f68ff);
+}
+
+/* ------------------------------------------------ */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: 5px;
+  cursor: pointer;
+
+}
+h1 span{
+  transition: 0.5s;
+}
+h1:hover span:nth-child(1){
+  margin-right: 10px;
+}
+h1:hover span:nth-child(2){
+  margin-right: 60px;
+}
+h1:hover span {
+  color: white; /* Temporary fix: Should be transparent for the gradient effect to show */
+  text-shadow: 
+    0 0 120px #fc72ff,
+    0 0 80px #8f68ff,
+    0 0 40px #487bff,
+    0 0 20px #8f68ff,
+    0 0 10px #fc72ff;
+  transition: all 0.3s ease;
+}
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.new-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #337ab7;
+  border-radius: 5px;
+  background-color: #337ab7;
+  color: white;
+  margin-bottom: 10px;
+}
+/* roadmap section ------------------------- */
+.roadmaps-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.roadmap-card {
+  background-color: #282828;
+  border: 1px solid #333;
+  border-radius: 25px;
+  padding: 20px;
+  width: 200px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.roadmap-card:hover {
+  border: 2px solid color-mix(in hsl increasing hue, #487bff 50%, #8f68ff 50%);
+}
+
+.roadmap-card .title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.roadmap-card .bookmark-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.roadmap-card .new-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1rem;
+  color: #ff9900;
+  cursor: pointer;
+}
+
+.roadmap-card .new-icon .new-text {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.7rem;
+  color: #ff9900;
+  cursor: pointer;
+}
+
+/* /footer-------------------------------------------------------------------------------/ */
+
+footer {
+  background: url('https://orange.codeberryschool.com/content/images/project-assets/simple-footer.png') repeat center;
+  display: table;
+  width: 100%;
+  height: 8rem;
+  text-align: center;
+  padding: 1rem 0 0 0;
+  font-family: 'Arial', sans-serif;
+  font-size: .875rem;
+  position: relative;
+}
+
+.wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  background: #282828;
+}
+
+footer small {
+  color: #ccc;
+  letter-spacing: .025rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 0 .5rem;
+  display: inline-block;
+}
+
+.footer-nav a:hover {
+  color: #f26896;
+  transition: color .15s ease-in-out;
+}
+
+/* -------------------------------------- */
+
+.errorlist {
+  color: #F00;
+  margin-left: 2rem;
+}
+
+.errorlist li::marker {
+  content: '🚨 ';
+}
+
+h2 {
+  color: #FFF;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  background-color: transparent;
+  padding: 20px 40px;
+  border-radius: 15px;
+  /* box-shadow: 0 0 15px color-mix(in hsl increasing hue, #487bff 50%, #8f68ff 50%); */
+  max-width: 600px;
+  width: 100%;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #FFF;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  /* border: 2px solid color-mix(in hsl increasing hue, #487bff 50%, #8f68ff 50%); */
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.errorlist {
+  color: red;
+  margin-bottom: 15px;
+}
